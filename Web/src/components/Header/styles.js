@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-  background: rgb(27, 29, 35) !important;
+  background: ${props => props.theme.colors.headerbk};
   padding: 10px 10px;
   border-bottom: 1px solid rgba(248, 248, 248, 0.3);
 `;
 
 export const Content = styled.div`
   height: 64px;
-  max-width: 1600px;
+  max-width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -35,7 +35,7 @@ export const Content = styled.div`
         color: #fff;
 
         &:hover {
-          color: ${darken(0.3, '#fff')};
+          color: ${darken(0.2, '#fff')};
         }
       }
     }
@@ -47,6 +47,25 @@ export const Content = styled.div`
     justify-content: center;
   }
 `;
+
+export const ThemeSwitch = styled.div`
+  margin-left: 800px;
+  justify-content: space-between;
+
+  svg {
+    margin: 0 5px 0 5px;
+    stroke: rgba(255,255,255,0.87);
+
+    &:first-child {
+      opacity: ${props => props.theme.title === 'dark' ? 0.5 : 1}
+    }
+
+    &:last-child {
+      opacity: ${props => props.theme.title === 'light' ? 0.5 : 1}
+    }
+  }
+`;
+
 export const Profile = styled.div`
   display: flex;
 
@@ -94,7 +113,7 @@ export const Profile = styled.div`
     strong {
       font-weight: normal;
       margin-left: 5px;
-      color: #fff;
+      color: ${props => props.theme.colors.text};;
     }
   }
 `;

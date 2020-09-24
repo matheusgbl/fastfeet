@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Switch from 'react-switch';
 import { useDispatch } from 'react-redux';
+import { ThemeContext } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { MdExitToApp } from 'react-icons/md';
+import { MdExitToApp, MdWbSunny } from 'react-icons/md';
+import { BsMoon } from 'react-icons/bs';
 import { signOut } from '../../store/modules/auth/actions';
 
-import { Container, Content, Profile } from './styles';
+import { Container, Content, ThemeSwitch, Profile } from './styles';
 
-import logoHeader from '../../assets/fastfeet-logo.png';
+import logoHeader from '../../assets/fastfeet-logo2.png';
 
-export default function Header() {
+export default function Header({ toogleTheme }) {
   const dispatch = useDispatch();
+  const { title } = useContext(ThemeContext);
 
   function handleLogOut() {
     dispatch(signOut());
@@ -35,6 +39,22 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+
+        <ThemeSwitch>
+          <MdWbSunny color="#fff" size={24} />
+            <Switch
+              onChange={toogleTheme}
+              checked={title === 'dark'}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              height={15}
+              width={40}
+              handleDiameter={20}
+              onColor="#7d40e7"
+              offColor="#24292e"
+              />
+          <BsMoon color="#fff" size={24} />
+        </ThemeSwitch>
 
         <aside>
           <Profile>

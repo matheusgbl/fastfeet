@@ -15,14 +15,14 @@ export const Title = styled.div`
 
   strong {
     font-size: 26px;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
   }
 `;
 
 export const Content = styled.div`
   width: 100%;
   padding: 30px;
-  background: #2c313a;
+  background: ${props => props.theme.colors.trbk};
   border: 0;
   border-radius: 4px;
   display: flex;
@@ -80,7 +80,7 @@ export const Content = styled.div`
   div.name {
     p {
       font-weight: bold;
-      color: #fff;
+      color: ${props => props.theme.colors.text};
     }
     input {
       height: 45px;
@@ -102,7 +102,7 @@ export const Content = styled.div`
 
     p {
       font-weight: bold;
-      color: #fff;
+      color: ${props => props.theme.colors.text};
     }
 
     input {
@@ -125,7 +125,7 @@ export const Content = styled.div`
 
     p {
       font-weight: bold;
-      color: #fff;
+      color: ${props => props.theme.colors.text};
     }
 
     input {

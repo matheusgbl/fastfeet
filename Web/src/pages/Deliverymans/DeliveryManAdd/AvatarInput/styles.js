@@ -16,7 +16,7 @@ export const Container = styled.div`
       height: 120px;
       width: 120px;
       border-radius: 50%;
-      border: 2px solid #ddd;
+      border: 2px solid #ccc;
     }
 
     input {
@@ -31,12 +31,12 @@ export const Container = styled.div`
       height: 120px;
       width: 120px;
       border-radius: 50%;
-      border: 2px dashed #ddd;
+      border: 2px dashed #ccc;
 
       strong {
         font-size: 10px;
 
-        color: #ddd;
+        color: #ccc;
       }
     }
   }

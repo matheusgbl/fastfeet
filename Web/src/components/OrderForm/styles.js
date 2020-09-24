@@ -22,7 +22,7 @@ export const Title = styled.div`
 
   strong {
     font-size: 26px;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
   }
 `;
 
@@ -38,25 +38,25 @@ export const InputContent = styled.div`
 
 export const Content = styled.div`
   flex: 1;
-  background: #fff;
+  background: ${props => props.theme.colors.background};
   border-radius: 4px;
   flex-direction: column;
   padding: 20px;
   margin-top: 20px;
-  background: #2c313a;
+  background: ${props => props.theme.colors.orderbk};
 
   > div {
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: space-between;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
   }
 
   footer {
     margin-top: 10px;
     display: flex;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
 
     div {
       width: 100%;
@@ -84,7 +84,6 @@ export const Content = styled.div`
       background: #7d40e7;
       margin: 15px 0 0 0;
       color: #fff;
-
       font-weight: medium;
       border: 0;
       border-radius: 6px;

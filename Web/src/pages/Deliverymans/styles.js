@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 90%;
 
   h2 {
-    color: #fff;
+    color: ${props => props.theme.colors.text};
     text-align: center;
     font-size: 26px;
   }
@@ -39,7 +39,7 @@ export const Container = styled.div`
       th {
         flex: 1px;
         text-align: left;
-        color: #fff;
+        color: ${props => props.theme.colors.text};
         font-size: 14px;
         :last-child {
           text-align: right;
@@ -58,7 +58,7 @@ export const Container = styled.div`
         display: flex;
         flex-direction: row;
         align-items: center;
-        background: #2c313a;
+        background: ${props => props.theme.colors.trbk};
         height: 60px;
         padding: 5px 10px;
         border-radius: 4px;
@@ -70,7 +70,7 @@ export const Container = styled.div`
         align-items: center;
         flex: 1;
         font-size: 14px;
-        color: #fff;
+        color: ${props => props.theme.colors.text};
         :last-child {
           justify-content: flex-end;
           margin-right: 20px;
@@ -116,9 +116,9 @@ export const AddDeliveryman = styled(Link)`
 export const NavPage = styled.div`
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  color: ${props => props.theme.colors.text};
   > button {
-    color: #fff;
+    color: ${props => props.theme.colors.text};
     border: 0;
     background: none;
     cursor: pointer;
@@ -128,7 +128,7 @@ export const NavPage = styled.div`
 export const NavPageButton = styled.button.attrs({
   type: 'button',
 })`
-  color: #fff;
+  color: ${props => props.theme.colors.text};
   border: 0;
   background: none;
   cursor: ${props => (props.disabled ? null : 'pointer')};

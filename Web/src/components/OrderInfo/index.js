@@ -54,7 +54,7 @@ export default function OrderInfo({ data, visible }) {
           <div>
             <p>ORDER INFORMATION</p>
             <button type="button" onClick={e => handleClose(e)}>
-              <MdClose size={20} />
+              <MdClose size={20} color="#000" />
             </button>
           </div>
           <div className="info">

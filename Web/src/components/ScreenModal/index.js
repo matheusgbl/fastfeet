@@ -21,7 +21,7 @@ export default function ScreenModal({ children, visible, title }) {
         <div>
           <h3>{title}</h3>
           <button type="button" onCLick={e => handleClose(e)}>
-            <MdClose size={20} />
+            <MdClose size={20} color="#000" />
           </button>
         </div>
 

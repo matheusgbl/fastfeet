@@ -12,7 +12,7 @@ export const Content = styled.div`
   width: 100%;
   max-width: 315px;
   text-align: center;
-  background: #121212;
+  background: ${props => props.theme.colors.background};
   border-radius: 10px;
   padding: 20px;
 
@@ -27,16 +27,16 @@ export const Content = styled.div`
     margin-top: 30px;
 
     input {
-      background: #24292e;
-      border: 1px solid #fff;
+      background: ${props => props.theme.colors.background};
+      border: 1px solid #3333;
       border-radius: 6px;
       height: 44px;
       padding: 0 15px;
-      color: #fff;
+      color: #000;
       margin: 0 0 10px;
 
       &::placeholder {
-        color: #ddd;
+        color: #000;
         opacity: 60%;
       }
     }

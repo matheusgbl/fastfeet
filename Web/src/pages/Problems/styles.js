@@ -13,7 +13,7 @@ export const Title = styled.div`
 
   strong {
     font-size: 26px;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
   }
 `;
 
@@ -36,7 +36,7 @@ export const Content = styled.table`
     th {
       flex: 1px;
       text-align: left;
-      color: #fff;
+      color: ${props => props.theme.colors.text};
       font-size: 14px;
       :last-child {
         text-align: right;
@@ -55,7 +55,7 @@ export const Content = styled.table`
       display: flex;
       flex-direction: row;
       align-items: center;
-      background: #2c313a;
+      background: ${props => props.theme.colors.trbk};
       height: 60px;
       padding: 5px 10px;
       border-radius: 4px;
@@ -66,7 +66,7 @@ export const Content = styled.table`
       align-items: center;
       flex: 1;
       font-size: 14px;
-      color: #fff;
+      color: ${props => props.theme.colors.text};
       main {
         display: flex;
         justify-content: center;
@@ -96,7 +96,7 @@ export const Content = styled.table`
 export const NavPage = styled.div`
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  color: ${props => props.theme.colors.text};
   > button {
     color: #fff;
     border: 0;
@@ -108,7 +108,7 @@ export const NavPage = styled.div`
 export const NavPageButton = styled.button.attrs({
   type: 'button',
 })`
-  color: #fff;
+  color: ${props => props.theme.colors.text};
   border: 0;
   background: none;
   cursor: ${props => (props.disabled ? null : 'pointer')};

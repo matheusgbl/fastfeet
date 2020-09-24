@@ -46,7 +46,7 @@ export default function AvatarInput() {
         ) : (
           <>
             <div>
-              <MdPhotoCamera size={44} color="#ddd" />
+              <MdPhotoCamera size={44} color="#ccc" />
               <strong>ADD PICTURE</strong>
             </div>
           </>

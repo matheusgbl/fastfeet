@@ -16,7 +16,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background: #2c313a;
+  background: ${props => props.theme.colors.background};
   width: 500px;
 
   border: 0;
@@ -48,11 +48,11 @@ export const Content = styled.div`
   }
 
   h3 {
-    color: #fff;
+    color: ${props => props.theme.colors.text};
   }
 
   p {
     margin: 20px 0;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
   }
 `;

@@ -52,6 +52,10 @@ export default function Recipient() {
       toast.error('Error when deleting recipient!');
 
       console.tron.log(error);
+    } finally {
+      setTimeout(function() {
+        history.go(0);
+      }, 4000);
     }
   }
 
@@ -78,7 +82,7 @@ export default function Recipient() {
               type="button"
               onClick={() => history.push('/recipient_create')}
             >
-              <MdAdd color="#fff" size={20} />
+              <MdAdd color="#fff" size={24} />
               <strong>CREATE</strong>
             </button>
           </div>
