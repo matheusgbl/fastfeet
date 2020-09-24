@@ -3,7 +3,7 @@ import { darken } from 'polished';
 
 export const Wrapper = styled.div`
   height: 100%;
-  background: ${props => props.theme.colors.signinbk};
+  background: #181818;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ export const Content = styled.div`
     margin-top: 30px;
 
     input {
-      background: ${props => props.theme.colors.background};
+      background: #24292e;
       border: 0;
       border-radius: 8px;
       height: 44px;
@@ -34,7 +34,7 @@ export const Content = styled.div`
     }
 
     span {
-      color: ${props => props.theme.colors.text};
+      color: #fff;
       align-self: flex-start;
       margin: 0 0 10px;
       font-weight: bold;
