@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/matheusgbl/fastfeet/blob/master/.github/readme-logo.png" title="FastFeet" alt="FastFeet">
+<img src="https://raw.githubusercontent.com/matheusgbl/fastfeet/master/.github/readme-logo.png" alt="FastFeet">
 
 
 ***INSERT GRAPHIC HERE (include hyperlink in image)***
