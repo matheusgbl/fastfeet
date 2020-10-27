@@ -20,7 +20,7 @@ export default function AvatarInput() {
       registerField({
         name: 'avatar_id',
         ref: ref.current,
-        path: 'dataset.files',
+        path: 'dataset.file',
       });
     }
   }, [ref, registerField]);
@@ -42,12 +42,12 @@ export default function AvatarInput() {
     <Container>
       <label htmlFor="avatar">
         {preview ? (
-          <img src={preview} alt="Deliveryman Avatar" />
+          <img src={preview} alt="Avatar do Entregador" />
         ) : (
           <>
             <div>
-              <MdPhotoCamera size={44} color="#ccc" />
-              <strong>ADD PICTURE</strong>
+              <MdPhotoCamera size={44} color="#ddd" />
+              <strong>Adicionar foto</strong>
             </div>
           </>
         )}

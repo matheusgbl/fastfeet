@@ -1,12 +1,6 @@
-import React from 'react';
+import styled from 'styled-components/native';
 
-import { Container, Primary, Secundary } from './styles';
-
-export default function Background() {
-  return (
-    <Container>
-      <Primary />
-      <Secundary />
-    </Container>
-  );
-}
+export default styled.View`
+  flex: 1;
+  background: #fff;
+`;

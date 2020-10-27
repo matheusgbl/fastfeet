@@ -10,17 +10,15 @@ import './config/ReactotronConfig';
 import { store, persistor } from './store';
 import App from './App';
 
-// import { Container } from './styles';
-
 export default function src() {
   return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <NavigationContainer>
+    <NavigationContainer>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
           <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
           <App />
-        </NavigationContainer>
-      </PersistGate>
-    </Provider>
+        </PersistGate>
+      </Provider>
+    </NavigationContainer>
   );
 }

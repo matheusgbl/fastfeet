@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { Op } from 'sequelize';
 import Deliveryman from '../models/Deliveryman';
-import Files from '../models/Files';
+import File from '../models/File';
 
 class DeliverymanController {
   async store(req, res) {
@@ -10,42 +10,38 @@ class DeliverymanController {
       email: Yup.string()
         .email()
         .required(),
-      avatar_id: Yup.number(),
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation failed' });
+      return res.status(400).json({ error: 'Validation Fails' });
     }
 
-    const deliverymanExist = await Deliveryman.findOne({
+    const deliverymanExists = await Deliveryman.findOne({
       where: { email: req.body.email },
     });
 
-    if (deliverymanExist) {
-      return res.status(400).json({ error: 'Deliveryman already exist.' });
+    if (deliverymanExists) {
+      return res.status(400).json({ error: 'Deliveryman already exists.' });
     }
 
-    const { id, name, email, deliveryman } = await Deliveryman.create(req.body);
+    const deliveryman = await Deliveryman.create(req.body);
 
-    return res.json({
-      id,
-      name,
-      email,
-      deliveryman,
-    });
+    return res.json(deliveryman);
   }
 
   async show(req, res) {
     const { id } = req.params;
 
-    const deliveryman = await Deliveryman.findOne({
+    const deliveryman = await Deliveryman.findByPk(id, {
       where: { id },
-      attributes: ['id', 'avatar_id', 'name', 'email', 'created_at'],
+      attributes: {
+        exclude: ['avatar_id']
+      },
       include: [
         {
-          model: Files,
+          model: File,
           as: 'avatar',
-          attributes: ['id', 'url', 'path'],
+          attributes: ['id', 'name', 'url', 'path'],
         },
       ],
     });
@@ -95,7 +91,7 @@ class DeliverymanController {
         attributes: ['id', 'name', 'email', 'avatar_id', 'createdAt'],
         include: [
           {
-            model: Files,
+            model: File,
             as: 'avatar',
             attributes: ['name', 'path', 'url'],
           },
@@ -106,10 +102,10 @@ class DeliverymanController {
 
     if (!q) {
       const deliveryman = await Deliveryman.findAll({
-        attributes: ['id', 'name', 'email', 'avatar_id'],
+        attributes: ['id', 'name', 'email'],
         include: [
           {
-            model: Files,
+            model: File,
             as: 'avatar',
             attributes: ['name', 'path', 'url'],
           },
@@ -127,10 +123,10 @@ class DeliverymanController {
           [Op.iLike]: q,
         },
       },
-      attributes: ['id', 'name', 'email', 'avatar_id'],
+      attributes: ['id', 'name', 'email'],
       include: [
         {
-          model: Files,
+          model: File,
           as: 'avatar',
           attributes: ['name', 'path', 'url'],
         },

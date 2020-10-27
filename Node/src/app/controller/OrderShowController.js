@@ -1,6 +1,6 @@
 import Order from '../models/Order';
 import Recipient from '../models/Recipient';
-import Files from '../models/Files';
+import File from '../models/File';
 
 class OrderShowController {
   async show(req, res) {
@@ -32,7 +32,7 @@ class OrderShowController {
           ],
         },
         {
-          model: Files,
+          model: File,
           as: 'signature',
           attributes: ['id', 'url', 'path'],
         },

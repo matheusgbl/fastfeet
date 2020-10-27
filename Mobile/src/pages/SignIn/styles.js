@@ -1,13 +1,9 @@
-import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-export const Container = styled.KeyboardAvoidingView.attrs({
-  enabled: Platform.OS === 'ios',
-  behavior: 'padding',
-})`
+export const Container = styled.KeyboardAvoidingView`
   background: #7d40e7;
   flex: 1;
   padding: 0 25px;
@@ -23,6 +19,15 @@ export const Content = styled.SafeAreaView`
 export const Form = styled.View`
   align-self: stretch;
   margin-top: 30px;
+`;
+
+export const ErrorLabel = styled.Text`
+  margin-top: 5px;
+  align-self: stretch;
+  text-align: left;
+  color: #e74040;
+  font-weight: bold;
+  font-size: 15px;
 `;
 
 export const FormInput = styled(Input)``;

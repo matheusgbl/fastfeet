@@ -1,45 +1,74 @@
 <img src="https://user-images.githubusercontent.com/55060810/94372437-c9e10980-00d3-11eb-86a2-b12a05d1f937.png" alt="FastFeet">
 
 
-***INSERT GRAPHIC HERE (include hyperlink in image)***
+# 🚀 FastFeet - RocketSeat
 
-# Repository Title Goes Here
+# 📚 Tutorial
 
-> Subtitle or Short Description Goes Here
+## 🚩 Pré-Requisitos
 
-> ideally one sentence
+Para que você consiga executar este projeto, você irá ter instalado em sua máquina os seguintes pacotes:
 
-> include terms/tags that can be searched
+*[Yarn](https://yarnpkg.com/) (Opcional);
+*[NodeJS v10.16 ou maior](https://nodejs.org/en/);
+*[Git](https://git-scm.com/);
+*[Docker](https://docker.com);
+*[Postbirs](https://www.electronjs.org/apps/postbird);
 
-**Badges will go here**
+## 💻 Passo-a-Passo
 
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
-- downloads
-- gitter chat
-- license
-- etc.
+### 1. Clonar o repositório
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+  $ git clone https://github.com/matheusgbl/fastfeet.git
 
-- For more on these wonderful ~~badgers~~ badges, refer to <a href="http://badges.github.io/badgerbadgerbadger/" target="_blank">`badgerbadgerbadger`</a>.
+### 2. Rodar um container utilizando DOCKER
 
-***INSERT ANOTHER GRAPHIC HERE***
+  $ docker run --name fastfeet -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres
 
-[![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
+Caso você já possua um container com Postgres, execute:
 
-- Most people will glance at your `README`, *maybe* star it, and leave
-- Ergo, people should understand instantly what your project is about based on your repo
+  $ docker start "CONTAINER NAME"
 
-> Tips
+Para descobrir o "Container Name" basta executar:
 
-- HAVE WHITE SPACE
-- MAKE IT PRETTY
-- GIFS ARE REALLY COOL
+  $ docker ps
+
+### 3. Iniciar o REDIS com docker
+
+  $ docker run --name redisfastfeet -p 6379:6379 -d -t redis:alpine
+
+Caso você já possua um container com Redis, basta seguir o mesmo modelo descrito para o Postgres.
+
+### 4. Criar a database pelo PostBird:
+
+  Faça login no postbird e insira os seguintes dados:
+
+  <img src="(https://user-images.githubusercontent.com/55060810/94374422-8772f900-00e2-11eb-8b39-d757dfc11ab0.png)">
+
+  Caso tenha trocado alguma informação, basta trocar os campos na hora de realizar o login.
+
+  Logo após realizar o login na aplicação, basta selecionar "Create Database", conforme segue a imagem, inserir o nome
+  desejado e pronto.
+
+  <img src="(https://user-images.githubusercontent.com/55060810/94374461-d15bdf00-00e2-11eb-93f7-fa36ca56febd.png)">
+
+### 5. Rode os seguintes comandos na pasta NODE para dar inicio ao servidor:
+
+  $ cd node
+
+Para instalar as dependências execute:
+
+  $ yarn ou npm install
+
+Para rodar as migrations e as seeds execute nesta ordem:
+
+  $ yarn sequelize db:create ou npx sequelize db:create
+  $ yarn sequelize db:migrate npx sequelize db:migrate
+  $ yarn sequelize db:seed:all npx sequelize db:seed:all
+
+### 6. Executar o servidor:
+
+  
 
 > GIF Tools
 
@@ -54,144 +83,10 @@
 
 ![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
 
----
-
-## Table of Contents (Optional)
-
-> If your `README` has a lot of info, section headers might be nice.
-
-- [Installation](#installation)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
-- [Support](#support)
-- [License](#license)
-
-
----
-
-## Example (Optional)
-
-```javascript
-// code away!
-
-let generateProject = project => {
-  let code = [];
-  for (let js = 0; js < project.length; js++) {
-    code.push(js);
-  }
-};
-```
-
----
-
-## Installation
-
-- All the `code` required to get started
-- Images of what it should look like
-
-### Clone
-
-- Clone this repo to your local machine using `https://github.com/fvcproductions/SOMEREPO`
-
-### Setup
-
-- If you want more syntax highlighting, format your code like this:
-
-> update and install this package first
-
-```shell
-$ brew update
-$ brew install fvcproductions
-```
-
-> now install npm and bower packages
-
-```shell
-$ npm install
-$ bower install
-```
-
-- For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank">here</a>.
-
----
-
-## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
-
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
-
----
-
-## Contributing
-
-> To get started...
-
-### Step 1
-
-- **Option 1**
-    - 🍴 Fork this repo!
-
-- **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
-
-### Step 2
-
-- **HACK AWAY!** 🔨🔨🔨
-
-### Step 3
-
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
-
----
-
-## Team
-
-> Or Contributors/People
-
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
-| :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
-
-- You can just grab their GitHub profile image URL
-- You should probably resize their picture using `?s=200` at the end of the image URL.
-
----
-
-## FAQ
-
-- **How do I do *specifically* so and so?**
-    - No problem! Just do this.
-
----
-
-## Support
-
-Reach out to me at one of the following places!
-
-- Website at <a href="http://fvcproductions.com" target="_blank">`fvcproductions.com`</a>
-- Twitter at <a href="http://twitter.com/fvcproductions" target="_blank">`@fvcproductions`</a>
-- Insert more social links here.
-
----
-
-## Donations (Optional)
-
-- You could include a <a href="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png" target="_blank">Gratipay</a> link as well.
-
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/fvcproductions/)
-
-
----
 
 ## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
+- Copyright 2020 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.

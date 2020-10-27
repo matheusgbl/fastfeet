@@ -1,14 +1,35 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Image } from 'react-native';
 
-import logo from '../../assets/fastfeet-logo.png';
-import { Container, Content, Form, FormInput, SubmitButton } from './styles';
+import { signInRequest } from '../../store/modules/auth/actions';
+
+import logo from '../../assets/fastfeet-logo2.png';
+import {
+  Container,
+  Content,
+  Form,
+  ErrorLabel,
+  FormInput,
+  SubmitButton,
+} from './styles';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(false);
+
+  const dispatch = useDispatch();
 
   const loading = useSelector((state) => state.auth.loading);
+
+  function handleSubmit() {
+    if (!email) setError(true);
+    else dispatch(signInRequest(email));
+  }
+
+  useEffect(() => {
+    setError(false);
+  }, [email]);
 
   return (
     <Container>
@@ -20,13 +41,17 @@ export default function SignIn() {
             keyboardType="email-address"
             autoCorrect={false}
             autoCapitalize="none"
-            placeholder="Digite seu e-mail"
+            placeholder="example@email.com"
             returnKeyType="send"
+            onSubmitEditing={handleSubmit}
             value={email}
             onChangeText={setEmail}
           />
 
-          <SubmitButton loading={loading}>Entrar no sistema</SubmitButton>
+          {error && <ErrorLabel>E-mail required</ErrorLabel>}
+          <SubmitButton loading={loading} onPress={handleSubmit}>
+            Login
+          </SubmitButton>
         </Form>
       </Content>
     </Container>

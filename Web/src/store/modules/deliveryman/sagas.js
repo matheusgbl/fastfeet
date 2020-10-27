@@ -44,7 +44,7 @@ export function* updateDeliveryman({ payload }) {
 
     yield put(updateDeliverymanSuccess(response.data));
 
-    toast.success('Deliveryman updated!');
+    toast.success('Deliveyrman updated!');
 
     history.push('/deliverymans');
   } catch ({ response }) {
@@ -66,7 +66,7 @@ export function* createDeliveryman({ payload }) {
 
     yield put(createDeliverymanSuccess());
 
-    toast.success('Deliveryman created!');
+    toast.success('Deliveyrman created!');
 
     history.push('/deliverymans');
   } catch ({ response }) {

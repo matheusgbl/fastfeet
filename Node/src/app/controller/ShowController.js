@@ -1,4 +1,4 @@
-import Files from '../models/Files';
+import File from '../models/File';
 import Order from '../models/Order';
 import Recipient from '../models/Recipient';
 import Deliveryman from '../models/Deliveryman';
@@ -30,7 +30,7 @@ class ShowController {
       ],
       include: [
         {
-          model: Files,
+          model: File,
           as: 'signature',
           attributes: ['id', 'name', 'path', 'url'],
         },
@@ -40,7 +40,7 @@ class ShowController {
           attributes: ['id', 'name', 'email'],
           include: [
             {
-              model: Files,
+              model: File,
               as: 'avatar',
               attributes: ['id', 'name', 'path', 'url'],
             },

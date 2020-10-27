@@ -8,10 +8,6 @@ const INITIAL_STATE = {
 export default function deliveryman(state = INITIAL_STATE, action) {
   return producer(state, draft => {
     switch (action.type) {
-      case '@deliveryman/CREATE_REQUEST': {
-        draft.loading = true;
-        break;
-      }
       case '@deliveryman/EDIT_REQUEST': {
         draft.loading = true;
         break;
@@ -32,6 +28,10 @@ export default function deliveryman(state = INITIAL_STATE, action) {
       }
       case '@deliveryman/UPDATE_FAILURE': {
         draft.loading = false;
+        break;
+      }
+      case '@deliveryman/CREATE_REQUEST': {
+        draft.loading = true;
         break;
       }
       default:

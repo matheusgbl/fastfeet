@@ -3,7 +3,7 @@ import { Op } from 'sequelize';
 import Order from '../models/Order';
 import Deliveryman from '../models/Deliveryman';
 import Recipient from '../models/Recipient';
-import Files from '../models/Files';
+import File from '../models/File';
 
 import NewOrder from '../jobs/NewOrder';
 import Queue from '../../lib/Queue';
@@ -57,9 +57,11 @@ class OrderController {
 
   async update(req, res) {
     const schema = Yup.object().shape({
-      product: Yup.string().required(),
-      recipient_id: Yup.number().required(),
-      deliveryman_id: Yup.number().required(),
+      recipient_id: Yup.number(),
+      deliveryman_id: Yup.number(),
+      product: Yup.string(),
+      start_date: Yup.date(),
+      end_date: Yup.date(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -74,16 +76,19 @@ class OrderController {
       return res.status(400).json({ error: 'This order does not exist.' });
     }
 
-    const { product, recipient_id, deliveryman_id } = req.body;
+    const { recipient_id, deliveryman_id } = req.body;
 
-    await order.update({ product, recipient_id, deliveryman_id });
+    if (recipient_id && !(await Recipient.findByPk(recipient_id))) {
+      return res.status(400).json({ error: 'Recipient does not exists' });
+    }
 
-    return res.json({
-      id,
-      product,
-      recipient_id,
-      deliveryman_id,
-    });
+    if (deliveryman_id && !(await Deliveryman.findByPk(deliveryman_id))) {
+      return res.status(400).json({ error: 'Deliveryman does not exists' });
+    }
+
+    const deliveryUpdated = await delivery.update(req.body);
+
+    return res.json(deliveryUpdated);
   }
 
   async index(req, res) {
@@ -123,14 +128,14 @@ class OrderController {
               attributes: ['id', 'name', 'email'],
               include: [
                 {
-                  model: Files,
+                  model: File,
                   as: 'avatar',
                   attributes: ['id', 'url', 'path'],
                 },
               ],
             },
             {
-              model: Files,
+              model: File,
               as: 'signature',
               attributes: ['id', 'url', 'path'],
             },
@@ -167,14 +172,14 @@ class OrderController {
               attributes: ['id', 'name', 'email'],
               include: [
                 {
-                  model: Files,
+                  model: File,
                   as: 'avatar',
                   attributes: ['id', 'url', 'path'],
                 },
               ],
             },
             {
-              model: Files,
+              model: File,
               as: 'signature',
               attributes: ['id', 'url', 'path'],
             },
@@ -214,14 +219,14 @@ class OrderController {
           attributes: ['id', 'name', 'email'],
           include: [
             {
-              model: Files,
+              model: File,
               as: 'avatar',
               attributes: ['id', 'path', 'url'],
             },
           ],
         },
         {
-          model: Files,
+          model: File,
           as: 'signature',
           attributes: ['id', 'path', 'url'],
         },

@@ -1,22 +1,3 @@
-export function createDeliverymanRequest(data) {
-  return {
-    type: '@deliveryman/CREATE_REQUEST',
-    payload: { data },
-  };
-}
-
-export function createDeliverymanSuccess() {
-  return {
-    type: '@deliveryman/CREATE_SUCCESS',
-  };
-}
-
-export function createDeliverymanFailure() {
-  return {
-    type: '@deliveryman/CREATE_FAILURE',
-  };
-}
-
 export function editDeliverymanRequest(id) {
   return {
     type: '@deliveryman/EDIT_REQUEST',
@@ -53,5 +34,24 @@ export function updateDeliverymanSuccess() {
 export function updateDeliverymanFailure() {
   return {
     type: '@deliveryman/UPDATE_FAILURE',
+  };
+}
+
+export function createDeliverymanRequest(data) {
+  return {
+    type: '@deliveryman/CREATE_REQUEST',
+    payload: { data },
+  };
+}
+
+export function createDeliverymanSuccess() {
+  return {
+    type: '@deliveryman/CREATE_SUCCESS',
+  };
+}
+
+export function createDeliverymanFailure() {
+  return {
+    type: '@deliveryman/CREATE_FAILURE',
   };
 }

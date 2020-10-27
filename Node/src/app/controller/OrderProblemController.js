@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 
 import OrderProblem from '../models/OrderProblem';
 import Deliveryman from '../models/Deliveryman';
-import Files from '../models/Files';
+import File from '../models/File';
 
 import Queue from '../../lib/Queue';
 import Order from '../models/Order';
@@ -100,14 +100,14 @@ class OrderProblemController {
               attributes: ['id', 'name', 'email'],
               include: [
                 {
-                  model: Files,
+                  model: File,
                   as: 'avatar',
                   attributes: ['id', 'name', 'path', 'url'],
                 },
               ],
             },
             {
-              model: Files,
+              model: File,
               as: 'signature',
               attributes: ['id', 'name', 'path', 'url'],
             },
