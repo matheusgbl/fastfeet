@@ -35,3 +35,8 @@ export const FormInput = styled(Input)``;
 export const SubmitButton = styled(Button)`
   margin-top: 10px;
 `;
+
+export const SignUpButton = styled(Button)`
+  margin-top: 5px;
+  background: #e65a00;
+`;

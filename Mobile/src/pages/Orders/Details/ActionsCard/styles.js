@@ -8,9 +8,7 @@ export const Container = styled.View`
   width: 100%;
   background: #f8f9fd;
   border-radius: 4px;
-  box-shadow: 0 0 3px #0000001a;
-  elevation: 3;
-  margin-top: 10px;
+  margin-top: 30px;
   flex-direction: row;
   justify-content: space-around;
 `;
@@ -28,10 +26,6 @@ export const Left = styled(RectButton)`
   width: ${(Dimensions.get('window').width - 20) / 3}px;
   align-items: center;
   justify-content: center;
-
-  border-right-color: #0000001a;
-  border-style: solid;
-  border-right-width: 1px;
 `;
 
 export const Center = styled(RectButton)`
@@ -46,8 +40,4 @@ export const Right = styled(RectButton)`
   width: ${(Dimensions.get('window').width - 20) / 3}px;
   align-items: center;
   justify-content: center;
-
-  border-left-color: #0000001a;
-  border-style: solid;
-  border-left-width: 1px;
 `;

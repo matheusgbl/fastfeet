@@ -25,7 +25,7 @@ routes.post('/users', UserController.store);
 
 routes.post('/sessions', SessionController.store);
 
-routes.post('/sessiondeliveryman', SessionDeliverymanController.store)
+routes.post('/sessiondeliveryman', SessionDeliverymanController.store);
 
 routes.get('/orders/:deliverymanId', ShowController.index);
 routes.get('/deliveryman/:deliverymanId/orders', ShowController.index);

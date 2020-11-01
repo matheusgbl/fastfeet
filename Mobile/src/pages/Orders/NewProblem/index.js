@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
 
-import api from '../../../../services/api';
+import api from '../../../services/api';
 
 import {
   Container,
   Background,
   Content,
   Form,
-  Input,
+  TInput,
   SubmitButton,
 } from './styles';
 
@@ -28,12 +28,18 @@ export default function NewProblem({ route }) {
       <Background>
         <Content>
           <Form>
-            <Input
+            <TInput
+              autoCapitalize="none"
+              underlineColorAndroid="transparent"
+              placeholder="Enter the details about the problem!"
+              autoCorrect={false}
+              multiline
+              numberOfLines={8}
               name="description"
+              returnKeyType="send"
               value={description}
               onSubmitEditing={handleSubmit}
               onChangeText={setDescription}
-              placeholder="Enter the details about the problem!"
             />
 
             <SubmitButton onPress={handleSubmit}>Send</SubmitButton>

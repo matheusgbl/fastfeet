@@ -29,15 +29,15 @@ export default function ActionsCard({ data }) {
     }
 
     try {
-      await api.put(`deliveryman/${profile.id}/orders/${data.id}`, {
+      await api.put(`deliveryman/${profile.id}/status/${data.id}`, {
         start_date: new Date(),
       });
 
-      Alert.alert('Order successfully withdrawn!');
+      Alert.alert('Successfully withdrawn!');
 
       navigation.navigate('Dashboard');
     } catch (err) {
-      Alert.alert('Failed to withdraw order.');
+      Alert.alert('Failed to confirm delivery.');
     }
   };
 

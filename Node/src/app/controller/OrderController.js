@@ -86,7 +86,7 @@ class OrderController {
       return res.status(400).json({ error: 'Deliveryman does not exists' });
     }
 
-    const deliveryUpdated = await delivery.update(req.body);
+    const deliveryUpdated = await order.update(req.body);
 
     return res.json(deliveryUpdated);
   }

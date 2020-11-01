@@ -3,18 +3,16 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { useNavigation } from '@react-navigation/native';
 import Dashboard from './pages/Orders';
-import Details from './pages/Orders/Details/OrderDetails';
-import NewProblem from './pages/Orders/Details/NewProblem';
+import Confirm from './pages/Orders/Confirm';
+import Details from './pages/Orders/Details';
+import NewProblem from './pages/Orders/NewProblem';
 
 const Stack = createStackNavigator();
 
 Icon.loadFont();
 
 export default function DeliveryStack() {
-  const navigation = useNavigation();
-
   return (
     <Stack.Navigator
       screenOptions={{
@@ -48,6 +46,19 @@ export default function DeliveryStack() {
         component={NewProblem}
         options={{
           headerTitle: 'Report problem',
+          headerBackTitleVisible: false,
+          headerTransparent: true,
+          headerTitleStyle: { fontWeight: 'bold' },
+          headerLeftContainerStyle: {
+            left: 10,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Confirm"
+        component={Confirm}
+        options={{
+          headerTitle: 'Confirm Delivery',
           headerBackTitleVisible: false,
           headerTransparent: true,
           headerTitleStyle: { fontWeight: 'bold' },
