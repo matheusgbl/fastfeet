@@ -21,8 +21,8 @@ export default function ProgressBar({ data }) {
       }
       if (data.start_date && !data.end_date) {
         setProgress([
-          { key: 1, label: 'Waiting', active: true },
-          { key: 2, label: 'Withdrawal', active: false },
+          { key: 1, label: 'Waiting', active: false },
+          { key: 2, label: 'Withdrawal', active: true },
           { key: 3, label: 'Delivered', active: false },
         ]);
       }

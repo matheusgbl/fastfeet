@@ -35,7 +35,7 @@ class DeliverymanController {
     const deliveryman = await Deliveryman.findByPk(id, {
       where: { id },
       attributes: {
-        exclude: ['avatar_id']
+        exclude: ['avatar_id'],
       },
       include: [
         {

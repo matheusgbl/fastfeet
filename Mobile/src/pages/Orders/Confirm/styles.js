@@ -1,13 +1,13 @@
 import styled from 'styled-components/native';
 import { Dimensions, Platform } from 'react-native';
 
-import { RNCamera } from 'react-native-camera';
 import Button from '../../../components/Button';
 
 export const Container = styled.View`
   padding: ${Platform.OS === 'ios' ? '78px 20px 20px' : '98px 20px 20px'};
   position: relative;
   flex: 1;
+  z-index: -1;
 `;
 
 export const HeaderBackground = styled.View`
@@ -17,9 +17,10 @@ export const HeaderBackground = styled.View`
   width: ${Dimensions.get('window').width}px;
 `;
 
-export const Camera = styled(RNCamera)`
+export const Content = styled.SafeAreaView`
   flex: 1;
-  width: 100%;
+
+  align-items: center;
 `;
 
 export const CameraWrapper = styled.View`

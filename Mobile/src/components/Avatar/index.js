@@ -14,7 +14,7 @@ export default function Avatar({ size, name, avatar }) {
         <Image
           size={size}
           source={{
-            uri: `http://192.168.15.2:3333/files/${profile.avatar.path}`,
+            uri: `http://192.168.15.4:3333/files/${profile.avatar.path}`,
           }}
         />
       )}

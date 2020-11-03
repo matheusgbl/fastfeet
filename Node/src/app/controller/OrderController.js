@@ -60,12 +60,14 @@ class OrderController {
       recipient_id: Yup.number(),
       deliveryman_id: Yup.number(),
       product: Yup.string(),
-      start_date: Yup.date(),
-      end_date: Yup.date(),
+      signature_id: Yup.number(),
+      canceled_at: Yup.string(),
+      start_date: Yup.string(),
+      end_date: Yup.string(),
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation is failed.' });
+      return res.status(400).json({ error: 'Validation Fails' });
     }
 
     const { id } = req.params;
@@ -73,22 +75,12 @@ class OrderController {
     const order = await Order.findByPk(id);
 
     if (!order) {
-      return res.status(400).json({ error: 'This order does not exist.' });
+      return res.status(401).json({ error: 'Delivery not found' });
     }
 
-    const { recipient_id, deliveryman_id } = req.body;
+    const updateOrder = await order.update(req.body);
 
-    if (recipient_id && !(await Recipient.findByPk(recipient_id))) {
-      return res.status(400).json({ error: 'Recipient does not exists' });
-    }
-
-    if (deliveryman_id && !(await Deliveryman.findByPk(deliveryman_id))) {
-      return res.status(400).json({ error: 'Deliveryman does not exists' });
-    }
-
-    const deliveryUpdated = await order.update(req.body);
-
-    return res.json(deliveryUpdated);
+    return res.json(updateOrder);
   }
 
   async index(req, res) {
