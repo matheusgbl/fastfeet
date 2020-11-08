@@ -13,11 +13,11 @@ import {
 } from './styles';
 
 export default function NewProblem({ route }) {
-  const { data } = route.params;
+  const { id } = route.params;
   const [description, setDescription] = useState('');
 
   async function handleSubmit() {
-    await api.post(`orders/problems/${data.id}`, {
+    await api.post(`orders/problems/${id}`, {
       description,
     });
     Alert.alert('New problem sucessfully registered.');

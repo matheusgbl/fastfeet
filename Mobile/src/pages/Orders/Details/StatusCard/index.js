@@ -30,7 +30,7 @@ export default function StatusCard({ data }) {
   let status = 'Pending';
   if (data.canceled_at) status = 'Canceled';
   else if (data.end_date) status = 'Delivered';
-  else if (data.start_date) status = 'withdrawn';
+  else if (data.start_date) status = 'Withdrawn';
   return (
     <Container>
       <Header>

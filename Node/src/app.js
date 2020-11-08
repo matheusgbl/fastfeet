@@ -1,9 +1,10 @@
+import 'dotenv/config';
+
 import express from 'express';
 import * as Sentry from '@sentry/node';
 import path from 'path';
 import Youch from 'youch';
 import cors from 'cors';
-
 import sentryConfig from './config/sentry';
 
 import 'express-async-errors';

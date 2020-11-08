@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  margin-top: 5px;
+  margin-top: 10px;
   border: 1px solid #eee;
   background: #fff;
   border-radius: 8px;
@@ -46,6 +46,8 @@ export const FooterContent = styled.Text`
   font-weight: bold;
   margin-top: 3px;
 `;
+
+export const Button = styled.TouchableOpacity``;
 
 export const ButtonText = styled.Text`
   color: #7d40e7;

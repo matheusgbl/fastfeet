@@ -1,5 +1,4 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 import { format, parseISO } from 'date-fns';
 import { pt } from 'date-fns/locale/pt';
 
@@ -13,12 +12,13 @@ import {
   Column,
   FooterLabel,
   FooterContent,
+  Button,
   ButtonText,
 } from './styles';
 
-import ProgressBar from '../ProgressBar';
+import DeliveredProgress from '../DeliveredProgress';
 
-export default function Card({ data, navigation }) {
+export default function CardDelivered({ data, navigation }) {
   const formattedDate = format(parseISO(data.created_at), 'dd/MM/yyyy', {
     locale: pt,
   });
@@ -29,15 +29,15 @@ export default function Card({ data, navigation }) {
 
   return (
     <>
-      {!data.end_date ? (
+      {data.end_date ? (
         <>
           <Container>
             <Header>
-              <Icon name="local-shipping" size={30} color="#7d40e7" />
+              <Icon name="local-shipping" size={32} color="#7d40e7" />
               <HeaderTitle>Order {data.id}</HeaderTitle>
             </Header>
 
-            <ProgressBar data={data} />
+            <DeliveredProgress data={data} />
 
             <Footer>
               <Column>
@@ -49,9 +49,9 @@ export default function Card({ data, navigation }) {
                 <FooterContent>{data.recipient.city}</FooterContent>
               </Column>
               <Column>
-                <TouchableOpacity onPress={() => handleDetail(data)}>
+                <Button onPress={() => handleDetail(data)}>
                   <ButtonText>Details</ButtonText>
-                </TouchableOpacity>
+                </Button>
               </Column>
             </Footer>
           </Container>

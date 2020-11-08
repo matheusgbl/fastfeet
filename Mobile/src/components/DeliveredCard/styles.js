@@ -1,10 +1,9 @@
 import styled from 'styled-components/native';
 import { ActivityIndicator } from 'react-native';
 
-export const Container = styled.View`
-  flex: 1;
-  flex-direction: column;
-`;
+export const List = styled.FlatList.attrs({
+  showsVerticalScrollIndicator: false,
+})``;
 
 export const Loading = styled(ActivityIndicator).attrs({
   size: 'large',
@@ -14,10 +13,6 @@ export const Loading = styled(ActivityIndicator).attrs({
   justify-content: center;
   align-items: center;
 `;
-
-export const List = styled.FlatList.attrs({
-  showVerticalScrollIndicator: false,
-})``;
 
 export const Content = styled.View`
   border: 2px solid #eee;

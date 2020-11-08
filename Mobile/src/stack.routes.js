@@ -7,6 +7,7 @@ import Dashboard from './pages/Orders';
 import Confirm from './pages/Orders/Confirm';
 import Details from './pages/Orders/Details';
 import NewProblem from './pages/Orders/NewProblem';
+import ViewProblems from './pages/Orders/ViewProblems';
 
 const Stack = createStackNavigator();
 
@@ -46,6 +47,19 @@ export default function DeliveryStack() {
         component={NewProblem}
         options={{
           headerTitle: 'Report problem',
+          headerBackTitleVisible: false,
+          headerTransparent: true,
+          headerTitleStyle: { fontWeight: 'bold' },
+          headerLeftContainerStyle: {
+            left: 10,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="ViewProblems"
+        component={ViewProblems}
+        options={{
+          title: 'View problems',
           headerBackTitleVisible: false,
           headerTransparent: true,
           headerTitleStyle: { fontWeight: 'bold' },

@@ -28,7 +28,7 @@ export default function AvatarInput() {
   async function handleChange(e) {
     const data = new FormData();
 
-    data.append('files', e.target.files[0]);
+    data.append('file', e.target.files[0]);
 
     const response = await api.post('files', data);
 

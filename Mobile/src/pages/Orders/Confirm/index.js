@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Alert, View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
@@ -23,19 +23,17 @@ import {
 export default function Confirm({ route, navigation }) {
   const { id } = route.params;
 
-  const cameraRef = useRef(null);
+  const [camera, setCamera] = useState(null);
   const [file, setFile] = useState(null);
 
   async function handleTakePhoto() {
-    if (cameraRef) {
+    if (camera) {
       const options = {
         quality: 0.5,
-        base64: true,
-        forceUpOrientation: true,
-        fixOrientation: true,
+        base64: false,
       };
 
-      const dataPhoto = await cameraRef.current.takePictureAsync(options);
+      const dataPhoto = await camera.takePictureAsync(options);
 
       setFile(dataPhoto);
     }
@@ -46,28 +44,27 @@ export default function Confirm({ route, navigation }) {
   }
 
   async function handleSubmit() {
-    const dataFile = new FormData();
-
-    dataFile.append('files', {
-      type: 'image/jpg',
-      uri: file.uri,
-      name: 'signature_id',
-    });
-
-    const response = await api.post('/files', dataFile);
-
-    try {
-      await api.put(`order/${id}`, {
-        end_date: new Date(),
-        signature_id: response.data.id,
+    if (file) {
+      const dataFile = new FormData();
+      dataFile.append('file', {
+        uri: file.uri,
+        name: 'signature.jpg',
+        type: 'image/jpeg',
       });
 
-      Alert.alert('Sucessfully delivered!');
+      const response = await api.post('/files', dataFile);
 
+      const signature_id = response.data.id;
+
+      await api.put(`/orders/${id}`, {
+        signature_id,
+        end_date: new Date(),
+      });
+
+      Alert.alert('Success', 'Delivery successfully confirmed!');
       navigation.navigate('Dashboard');
-    } catch (err) {
-      console.log(file);
-      Alert.alert('Failed to delivery this order!');
+    } else {
+      Alert.alert('Failure', 'You need to send a recipient signature photo!');
     }
   }
 
@@ -78,7 +75,9 @@ export default function Confirm({ route, navigation }) {
         <CameraWrapper>
           {!file ? (
             <RNCamera
-              ref={cameraRef}
+              ref={(ref) => {
+                setCamera(ref);
+              }}
               type={RNCamera.Constants.Type.back}
               flashMode={RNCamera.Constants.FlashMode.off}
               style={{ flex: 1 }}

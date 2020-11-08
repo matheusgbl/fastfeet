@@ -49,7 +49,7 @@ export default function ActionsCard({ data }) {
       </Left>
 
       <Center
-        onPress={() => navigation.navigate('NewProblem', { id: data.id })}
+        onPress={() => navigation.navigate('ViewProblems', { id: data.id })}
       >
         <Icon name="info-outline" color="#e7ba40" size={26} />
         <Label>View Problem</Label>

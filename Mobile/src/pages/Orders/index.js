@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TouchableOpacity, ActivityIndicator } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
-import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import api from '../../services/api';
 
 import OrderCard from '../../components/OrderCard';
+import DeliveredCard from '../../components/DeliveredCard';
 
 import { signOut } from '../../store/modules/auth/actions';
 
@@ -26,7 +26,6 @@ import {
   Aside,
   AsideText,
   AsideTextRight,
-  NoOrder,
 } from './styles';
 
 export default function Dashboard({ navigation }) {
@@ -102,10 +101,14 @@ export default function Dashboard({ navigation }) {
 
           <Right>
             <Aside onPress={handlePending}>
-              <AsideText active={active}>Pending</AsideText>
+              <AsideText active={active} visible={visible}>
+                Pending
+              </AsideText>
             </Aside>
             <Aside onPress={handleDeliveries}>
-              <AsideTextRight visible={visible}>Delivered</AsideTextRight>
+              <AsideTextRight actie={active} visible={visible}>
+                Delivered
+              </AsideTextRight>
             </Aside>
           </Right>
         </Title>
@@ -117,7 +120,7 @@ export default function Dashboard({ navigation }) {
             {active ? (
               <OrderCard navigation={navigation} />
             ) : (
-              <NoOrder>You have no orders delivered!</NoOrder>
+              <DeliveredCard navigation={navigation} />
             )}
           </>
         )}
@@ -125,11 +128,3 @@ export default function Dashboard({ navigation }) {
     </Container>
   );
 }
-
-Dashboard.navigationOptions = {
-  headerShown: false,
-};
-
-Dashboard.propTypes = {
-  navigation: PropTypes.instanceOf(Object).isRequired,
-};

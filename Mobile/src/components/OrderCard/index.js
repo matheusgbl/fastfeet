@@ -1,14 +1,20 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Card from './Card';
 
 import api from '../../services/api';
 
-import { List, Content, EmptyCard, CardText } from './styles';
+import {
+  Container,
+  Loading,
+  List,
+  Content,
+  EmptyCard,
+  CardText,
+} from './styles';
 
 export default function OrderCard({ navigation }) {
   const profile = useSelector((state) => state.deliveryman.profile);
@@ -33,27 +39,31 @@ export default function OrderCard({ navigation }) {
   }, [profile.id, page]);
 
   return (
-    <>
+    <Container>
       {loading ? (
-        <ActivityIndicator size={30} />
-      ) : orders.length < 1 ? (
-        <>
-          <Content>
-            <EmptyCard>
-              <Icon name="local-shipping" size={50} color="#999" />
-              <CardText>You do not have any order registered.</CardText>
-            </EmptyCard>
-          </Content>
-        </>
+        <Loading />
       ) : (
-        <List
-          data={orders}
-          keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => (
-            <Card data={item} navigation={navigation} />
+        <>
+          {orders.length < 1 ? (
+            <>
+              <Content>
+                <EmptyCard>
+                  <Icon name="local-shipping" size={50} color="#999" />
+                  <CardText>You do not have any order registered.</CardText>
+                </EmptyCard>
+              </Content>
+            </>
+          ) : (
+            <List
+              data={orders}
+              keyExtractor={(item) => String(item.id)}
+              renderItem={({ item }) => (
+                <Card data={item} navigation={navigation} />
+              )}
+            />
           )}
-        />
+        </>
       )}
-    </>
+    </Container>
   );
 }
