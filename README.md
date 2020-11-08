@@ -10,10 +10,14 @@
 Para que você consiga executar este projeto, você irá ter instalado em sua máquina os seguintes pacotes:
 
 *[Yarn](https://yarnpkg.com/) (Opcional);
+
 *[NodeJS v10.16 ou maior](https://nodejs.org/en/);
+
 *[Git](https://git-scm.com/);
+
 *[Docker](https://docker.com);
-*[Postbirs](https://www.electronjs.org/apps/postbird);
+
+*[Postbird](https://www.electronjs.org/apps/postbird);
 
 ## 💻 Passo-a-Passo
 
