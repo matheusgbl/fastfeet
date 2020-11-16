@@ -1,7 +1,19 @@
-<img src="https://user-images.githubusercontent.com/55060810/94372437-c9e10980-00d3-11eb-86a2-b12a05d1f937.png" alt="FastFeet">
+<img 
+src="https://user-images.githubusercontent.com/55060810/94372437-c9e10980-00d3-11eb-86a2-b12a05d1f937.png" 
+alt="FastFeet"
+>
 
 
 # 🚀 FastFeet - RocketSeat
+
+Desafio final do curso GoStack da RocketSeat.
+
+
+
+A aplicação trata-se de uma empresa fictícia de entregas de encomendas, com diversas funcionalidades,
+e regras de negócio.
+
+A solução foi feita através das tecnologias NodeJS (Backend),ReactJS (Front - End) e React Native (Android).
 
 # 📚 Tutorial
 
@@ -47,18 +59,24 @@ Caso você já possua um container com Redis, basta seguir o mesmo modelo descri
 
   Faça login no postbird e insira os seguintes dados:
 
-  <img src="(https://user-images.githubusercontent.com/55060810/94374422-8772f900-00e2-11eb-8b39-d757dfc11ab0.png)">
+  <img 
+  src="https://user-images.githubusercontent.com/55060810/94374422-8772f900-00e2-11eb-8b39-d757dfc11ab0.png" 
+  alt="postbir"
+  >
 
   Caso tenha trocado alguma informação, basta trocar os campos na hora de realizar o login.
 
   Logo após realizar o login na aplicação, basta selecionar "Create Database", conforme segue a imagem, inserir o nome
   desejado e pronto.
 
-  <img src="(https://user-images.githubusercontent.com/55060810/94374461-d15bdf00-00e2-11eb-93f7-fa36ca56febd.png)">
+  <img 
+  src="https://user-images.githubusercontent.com/55060810/94374461-d15bdf00-00e2-11eb-93f7-fa36ca56febd.png" 
+  alt="postbird"
+  >
 
-### 5. Rode os seguintes comandos na pasta NODE para dar inicio ao servidor:
+### 5. Rode os seguintes comandos na pasta Backend para dar inicio ao servidor:
 
-  $ cd node
+  $ cd backend
 
 Para instalar as dependências execute:
 
@@ -71,21 +89,14 @@ Para rodar as migrations e as seeds execute nesta ordem:
   $ yarn sequelize db:seed:all npx sequelize db:seed:all
 
 ### 6. Executar o servidor:
+Para rodar o servidor, basta rodar o seguinte comando na pasta Backend
 
-  
+  $ yarn dev
 
-> GIF Tools
+Para dar início a fila de requisições:
 
-- Use <a href="http://recordit.co/" target="_blank">**Recordit**</a> to create quicks screencasts of your desktop and export them as `GIF`s.
-- For terminal sessions, there's <a href="https://github.com/chjj/ttystudio" target="_blank">**ttystudio**</a> which also supports exporting `GIF`s.
+  $ yarn queue
 
-**Recordit**
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-**ttystudio**
-
-![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
 
 
 ## License
