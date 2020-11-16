@@ -1,7 +1,4 @@
-<img 
-src="https://user-images.githubusercontent.com/55060810/94372437-c9e10980-00d3-11eb-86a2-b12a05d1f937.png" 
-alt="FastFeet"
->
+![Logo](https://user-images.githubusercontent.com/55060810/94372437-c9e10980-00d3-11eb-86a2-b12a05d1f937.png)
 
 
 # 🚀 FastFeet - RocketSeat
@@ -59,20 +56,16 @@ Caso você já possua um container com Redis, basta seguir o mesmo modelo descri
 
   Faça login no postbird e insira os seguintes dados:
 
-  <img 
-  src="https://user-images.githubusercontent.com/55060810/94374422-8772f900-00e2-11eb-8b39-d757dfc11ab0.png" 
-  alt="postbird"
-  >
+
+![Postbird](https://user-images.githubusercontent.com/55060810/94374422-8772f900-00e2-11eb-8b39-d757dfc11ab0.png)
 
   Caso tenha trocado alguma informação, basta trocar os campos na hora de realizar o login.
 
   Logo após realizar o login na aplicação, basta selecionar "Create Database", conforme segue a imagem, inserir o nome
   desejado e pronto.
 
-  <img 
-  src="https://user-images.githubusercontent.com/55060810/94374461-d15bdf00-00e2-11eb-93f7-fa36ca56febd.png" 
-  alt="postbird"
-  >
+
+![Postbird](https://user-images.githubusercontent.com/55060810/94374461-d15bdf00-00e2-11eb-93f7-fa36ca56febd.png)
 
 ### 5. Rode os seguintes comandos na pasta Backend para dar inicio ao servidor:
 
