@@ -61,7 +61,7 @@ Caso você já possua um container com Redis, basta seguir o mesmo modelo descri
 
   <img 
   src="https://user-images.githubusercontent.com/55060810/94374422-8772f900-00e2-11eb-8b39-d757dfc11ab0.png" 
-  alt="postbir"
+  alt="postbird"
   >
 
   Caso tenha trocado alguma informação, basta trocar os campos na hora de realizar o login.
