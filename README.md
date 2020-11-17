@@ -11,7 +11,7 @@ Demonstração básica da aplicação WEB:
 
 
 Demonstração básica da aplicação MOBILE (Android):
-![mobileapp](https://user-images.githubusercontent.com/55060810/99420367-e29fbb80-28db-11eb-8dd3-613b9c3a568d.gif)
+![mobileapp](https://user-images.githubusercontent.com/55060810/99421420-1d562380-28dd-11eb-855e-be5ef28787e8.gif)
 
 
 
