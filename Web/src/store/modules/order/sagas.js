@@ -15,12 +15,12 @@ export function* editOrder({ payload }) {
   const { id } = payload;
 
   try {
-    const response = yield call(api.get, `order/${id}`);
+    const response = yield call(api.get, `orders/${id}`);
     console.tron.log(response.data);
 
     yield put(editOrderSuccess(response.data));
 
-    history.push('/orders_edit');
+    history.push(`/orders_edit/${id}`);
   } catch ({ response }) {
     yield put(editOrderFailure());
     console.tron.log(response.data.error);

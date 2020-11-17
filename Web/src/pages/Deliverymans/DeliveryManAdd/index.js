@@ -20,7 +20,7 @@ export default function DeliveryManAdd() {
     avatar_id: Yup.number(),
     name: Yup.string().required('Name is required'),
     email: Yup.string()
-      .email('Insert a valid e-amil')
+      .email('Insert a valid e-mail')
       .required('E-mail is required'),
   });
 

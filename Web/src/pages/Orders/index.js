@@ -57,7 +57,7 @@ export default function Orders() {
 
   async function handleView(id) {
     try {
-      const response = await api.get(`/order/${id}`);
+      const response = await api.get(`/orders/${id}`);
 
       setItem(response.data);
       setVisible(!visible);

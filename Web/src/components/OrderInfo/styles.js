@@ -61,14 +61,14 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    color: ${props => props.theme.colors.text};;
+    color: ${props => props.theme.colors.text};
 
     div {
       margin-top: 5px;
     }
 
     span.address {
-      color: ${props => props.theme.colors.text};;
+      color: ${props => props.theme.colors.text};
       margin-top: 5px;
     }
   }
@@ -80,16 +80,16 @@ export const Dates = styled.div`
 
   p {
     font-weight: bold;
-    color: ${props => props.theme.colors.text};;
+    color: ${props => props.theme.colors.text};
   }
 
   div.withdraw {
     margin-top: 5px;
     margin-bottom: 5px;
-    color: ${props => props.theme.colors.text};;
+    color: ${props => props.theme.colors.text};
 
     h4 {
-      color: ${props => props.theme.colors.text};;
+      color: ${props => props.theme.colors.text};
     }
   }
 
@@ -97,15 +97,15 @@ export const Dates = styled.div`
     margin-bottom: 10px;
 
     h3 {
-      color: ${props => props.theme.colors.text};;
+      color: ${props => props.theme.colors.text};
     }
 
     span {
-      color: ${props => props.theme.colors.text};;
+      color: ${props => props.theme.colors.text};
     }
 
     h4 {
-      color: ${props => props.theme.colors.text};;
+      color: ${props => props.theme.colors.text};
     }
   }
 `;
@@ -115,7 +115,7 @@ export const Signature = styled.div`
 
   p {
     font-weight: bold;
-    color: ${props => props.theme.colors.text};;
+    color: ${props => props.theme.colors.text};
   }
 
   div {

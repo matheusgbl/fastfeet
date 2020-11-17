@@ -27,7 +27,7 @@ export default function Routes() {
       {/* ORDERS */}
       <Route path="/orders" component={Order} isPrivate />
       <Route path="/orders_create" component={OrderAdd} isPrivate />
-      <Route path="/orders_edit" component={OrderEdit} isPrivate />
+      <Route path="/orders_edit/:id" component={OrderEdit} isPrivate />
       {/* PROBLEMS */}
       <Route path="/problems" component={Problems} isPrivate />
       {/* RECIPIENTS */}

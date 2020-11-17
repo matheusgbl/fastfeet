@@ -5,6 +5,8 @@
 
 Desafio final do curso GoStack da RocketSeat.
 
+![app](https://user-images.githubusercontent.com/55060810/99311600-9bfa8480-283b-11eb-873d-5be8b1f71b30.gif)
+
 
 
 A aplicação trata-se de uma empresa fictícia de entregas de encomendas, com diversas funcionalidades,
@@ -57,7 +59,7 @@ Caso você já possua um container com Redis, basta seguir o mesmo modelo descri
   Faça login no postbird e insira os seguintes dados:
 
 
-![Postbird](https://user-images.githubusercontent.com/55060810/94374422-8772f900-00e2-11eb-8b39-d757dfc11ab0.png)
+![postbird1](https://user-images.githubusercontent.com/55060810/99302043-95fda700-282d-11eb-8561-979dab145ac7.png)
 
   Caso tenha trocado alguma informação, basta trocar os campos na hora de realizar o login.
 
@@ -65,7 +67,7 @@ Caso você já possua um container com Redis, basta seguir o mesmo modelo descri
   desejado e pronto.
 
 
-![Postbird](https://user-images.githubusercontent.com/55060810/94374461-d15bdf00-00e2-11eb-93f7-fa36ca56febd.png)
+![postbird2](https://user-images.githubusercontent.com/55060810/99302115-add52b00-282d-11eb-92a3-ed31df07cdb2.png)
 
 ### 5. Rode os seguintes comandos na pasta Backend para dar inicio ao servidor:
 
@@ -90,6 +92,43 @@ Para dar início a fila de requisições:
 
   $ yarn queue
 
+
+## 👨‍💻 Tecnologias utilizadas
+
+### BackEnd
+
+* NodeJS;
+*Express;
+* Sequelize;
+* Axios;
+* Immer;
+* Docker;
+* Multer;
+* Date-fns;
+* JsonWebToken;
+* Bcrypt.js;
+* Cors;
+* Yup;
+
+### FrontEnd
+
+* ReactJS;
+* Redux;
+* Redux-Saga;
+* React-Icons;
+* History;
+* Styled-Components;
+* Eslint;
+* Prettier;
+
+### Mobile (Android)
+
+* React-Native;
+* React-Navigation;
+* React-Native-Camera;
+* Redux;
+* Redux-Saga;
+* Styled-Components;
 
 
 ## License

@@ -27,12 +27,11 @@ routes.post('/sessions', SessionController.store);
 
 routes.post('/sessiondeliveryman', SessionDeliverymanController.store);
 
-routes.get('/orders/:deliverymanId', ShowController.index);
+routes.get('/orders/:id', OrderShowController.show);
+
 routes.get('/deliveryman/:deliverymanId/orders', ShowController.index);
 
 routes.put('deliveryman/:deliveryman_id/orders/:id', OrderController.update);
-
-routes.get('/orders/:id', OrderShowController.show);
 
 routes.post('/deliveryman', DeliverymanController.store);
 routes.put('/deliveryman/:id', DeliverymanController.update);
@@ -66,7 +65,7 @@ routes.delete('/recipients/:id', RecipientController.delete);
 routes.post('/orders', OrderController.store);
 routes.put('/orders/:id', OrderController.update);
 routes.get('/orders', OrderController.index);
-routes.get('/orders/:id', OrderController.show);
+// routes.get('/orders/:id', OrderController.show);
 routes.delete('/orders/:id', OrderController.delete);
 
 export default routes;

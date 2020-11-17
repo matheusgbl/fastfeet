@@ -42,12 +42,12 @@ export default function AvatarInput() {
     <Container>
       <label htmlFor="avatar">
         {preview ? (
-          <img src={preview} alt="Avatar do Entregador" />
+          <img src={preview} alt="Deliveryman Avatar" />
         ) : (
           <>
             <div>
               <MdPhotoCamera size={44} color="#ddd" />
-              <strong>Adicionar foto</strong>
+              <strong>Add Picture</strong>
             </div>
           </>
         )}
