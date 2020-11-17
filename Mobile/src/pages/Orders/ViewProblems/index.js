@@ -40,7 +40,7 @@ export default function ViewProblems({ route }) {
           <ActivityIndicator color="#ee4b48" size={30} />
         ) : (
           <>
-            {!problems.lenght ? (
+            {!problems.length ? (
               <Title>No problems registered!</Title>
             ) : (
               <ListProblems

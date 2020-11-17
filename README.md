@@ -5,7 +5,13 @@
 
 Desafio final do curso GoStack da RocketSeat.
 
+Demonstração básica da aplicação WEB:
+
 ![app](https://user-images.githubusercontent.com/55060810/99311600-9bfa8480-283b-11eb-873d-5be8b1f71b30.gif)
+
+
+Demonstração básica da aplicação MOBILE (Android):
+![mobileapp](https://user-images.githubusercontent.com/55060810/99420367-e29fbb80-28db-11eb-8dd3-613b9c3a568d.gif)
 
 
 

@@ -20,7 +20,7 @@ export default function DeliveredCard({ navigation }) {
     async function loadOrders() {
       setLoading(true);
 
-      const response = await api.get(`orders/${profile.id}`);
+      const response = await api.get(`deliveryman/${profile.id}/orders`);
 
       setOrders(response.data);
       setTimeout(() => {

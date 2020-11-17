@@ -26,8 +26,8 @@ class SessionDeliverymanController {
           model: File,
           as: 'avatar',
           attributes: ['id', 'name', 'url', 'path'],
-        }
-      ]
+        },
+      ],
     });
 
     if (!deliveryman) {
@@ -42,7 +42,7 @@ class SessionDeliverymanController {
         name,
         email,
         createdAt,
-        avatar
+        avatar,
       },
       token: jwt.sign({ id }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,
